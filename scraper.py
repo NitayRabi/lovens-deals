@@ -10,6 +10,14 @@ HEADERS = {
     "Accept-Language": "nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7"
 }
 
+def fetch_html(url):
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        return urllib.request.urlopen(req, timeout=15).read().decode("utf-8", errors="ignore")
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
+        return ""
+
 dealers = [
     {
         "name": "QicQ Amsterdam",
@@ -41,10 +49,33 @@ dealers = [
         "url": "https://www.bikesbikesbikes.nl/pages/lovens-aanbieding",
         "pickup": "Amsterdam (Amstelkwartier)",
         "test_ride": "Yes (great outdoor test area)",
-        "notes": "Family cargo bike boutique near Spaklerweg. Offers personalized bundles (free raincover/bench packages).",
+        "notes": "€500 direct discount off MSRP on all Lovens Explorer 2 models + 15% off Qover theft insurance & 25% off maintenance labor!",
         "models": [
-            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6799, "status": "Demo & New in Stock"},
-            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo HD", "base_price": 6299, "deal_price": 5799, "status": "Available"}
+            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 6599, "deal_price": 6099, "status": "€500 Aanbieding"},
+            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo HD", "base_price": 6299, "deal_price": 5799, "status": "€500 Aanbieding"}
+        ]
+    },
+    {
+        "name": "Fietskar.nl (Hilversum)",
+        "location": "Hilversum Showroom & NL Delivery",
+        "url": "https://www.fietskar.nl/categorie/bakfiets/lovens/",
+        "pickup": "Hilversum (~30 min) & Delivery",
+        "test_ride": "Yes (Hilversum showroom)",
+        "notes": "Up to 12% off Explorer 2 S75 & S75 Auto/ABS models! Full custom configurator for batteries (400/545/800Wh) and accessories.",
+        "models": [
+            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6599, "status": "From €6,599 (400Wh+)"},
+            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6299, "deal_price": 5549, "status": "-12% Deal (From €5,549)"}
+        ]
+    },
+    {
+        "name": "viaBOVAG (Bike Totaal Krimpen)",
+        "location": "Parkzoom 27-29, Krimpen a/d IJssel",
+        "url": "https://www.viabovag.nl/fiets/aanbod/lovens-explorer-2-3rm54oj",
+        "pickup": "Krimpen a/d IJssel (BOVAG Certified)",
+        "test_ride": "Yes (Request via BOVAG)",
+        "notes": "Official BLACK FRIDAY listing: €800 discount on brand-new 2025 Lovens Explorer 2 S75 (Avenue Green) with BOVAG 40-point check & warranty.",
+        "models": [
+            {"model": "Explorer 2 S75 (Avenue Green)", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6299, "deal_price": 5499, "status": "BLACK FRIDAY (-€800)"}
         ]
     },
     {
@@ -73,7 +104,30 @@ dealers = [
     }
 ]
 
-# Write live data json
+def live_check():
+    # Live check Bikes Bikes Bikes
+    bbb_html = fetch_html("https://www.bikesbikesbikes.nl/pages/lovens-aanbieding")
+    if bbb_html:
+        for d in dealers:
+            if d["name"] == "Bikes Bikes Bikes":
+                m_s100 = re.search(r'€\s*([0-9]\.[0-9]{3}),00\s*€\s*([0-9]\.[0-9]{3}),00.*?explorer-s100', bbb_html, re.I | re.S)
+                if m_s100:
+                    deal_p = int(m_s100.group(1).replace(".", ""))
+                    base_p = int(m_s100.group(2).replace(".", ""))
+                    d["models"][0]["deal_price"] = deal_p
+                    d["models"][0]["base_price"] = base_p
+
+    # Live check viaBOVAG
+    bovag_html = fetch_html("https://www.viabovag.nl/fiets/aanbod/lovens-explorer-2-3rm54oj")
+    if bovag_html:
+        for d in dealers:
+            if "viaBOVAG" in d["name"]:
+                m_price = re.search(r'€\s*([0-9]\.[0-9]{3}),-', bovag_html)
+                if m_price:
+                    d["models"][0]["deal_price"] = int(m_price.group(1).replace(".", ""))
+
+live_check()
+
 output = {
     "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     "target_focus": "Lovens Explorer 2 S100 & S75",
