@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lovens Bakfiets Price Comparison by Model | Amsterdam</title>
+  <title>Lovens Bakfiets Price Comparison by Model | 1053 LH Oud-West</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen">
   <!-- Top Banner -->
   <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600 text-white font-medium py-2.5 px-4 text-center text-sm shadow-md">
-    <span>🔧 <strong>Amsterdam Local Maintenance Only:</strong> Filtered exclusively to dealers with an in-city Amsterdam workshop for ongoing service &amp; warranty.</span>
+    <span>🏠 <strong>Tailored for 1053 LH (Ter Haarstraat, Oud-West):</strong> Cycling distances, 3 closest Overtoom/Schinkel workshops (&lt;8 min ride), Melia Babyschaal setup &amp; 1053 LH insurance rules!</span>
   </div>
 
   <main class="max-w-6xl mx-auto px-4 py-8">
@@ -28,10 +28,10 @@
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-amber-400 mb-3">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Compare by Model &bull; 6 Amsterdam Service Hubs
+          Home Base: 1053 LH (Oud-West) &bull; Melia Babyschaal + Toddler Setup
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Lovens Black Friday Deal Radar</h1>
-        <p class="text-slate-400 mt-2 text-base">Side-by-side price comparison by model, interactive test-ride checklist, and Amsterdam insurance guide.</p>
+        <p class="text-slate-400 mt-2 text-base">Side-by-side price comparison by model, cycling times from <strong>1053 LH</strong>, Melia Babyschaal test-ride checklist &amp; insurance guide.</p>
       </div>
       <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 text-right min-w-[210px]">
         <span class="text-xs font-medium text-slate-500 uppercase tracking-wider block">Last Checked</span>
@@ -39,6 +39,52 @@
         <span class="text-xs text-slate-400 block mt-1">Daily 09:00 Amsterdam Check</span>
       </div>
     </header>
+
+    <!-- 1053 LH Local Proximity Highlight Banner -->
+    <div class="mb-8 bg-slate-900/90 border border-amber-500/30 rounded-2xl p-5 shadow-md">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-base font-extrabold text-amber-400 flex items-center gap-2">
+            <span>📍</span> Your 3 Backyard Lovens Workshops from 1053 LH (Oud-West)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">
+            Living in <strong>1053 LH (Ter Haarstraat)</strong> puts 3 authorized Lovens service hubs right down the Overtoom corridor—ideal for quick brake/belt adjustments or dropping the bike off before work:
+          </p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="text-xs text-slate-400">Sort offers by:</span>
+          <button onclick="setSort('PRICE')" id="sort-PRICE" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 transition">
+            💶 Lowest Price
+          </button>
+          <button onclick="setSort('DISTANCE')" id="sort-DISTANCE" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+            🚴 Closest to 1053 LH
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4 text-xs">
+        <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-white">1. Fietsenwinkel.nl (Overtoom 8)</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">~4 min (1.2 km)</span>
+          </div>
+          <p class="text-slate-400 mt-1">Just past Nassaukade at the start of Overtoom. Has Explorer 2 S75 (€5,699) &amp; S100 (€6,199) on Black Friday deal.</p>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-white">2. Urban E-Bikes (Overtoom 459)</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">~7 min (2.1 km)</span>
+          </div>
+          <p class="text-slate-400 mt-1">Straight down Overtoom. Very convenient local workshop for West residents.</p>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-white">3. DrBeyk (Eerste Schinkelstraat 16)</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">~8 min (2.5 km)</span>
+          </div>
+          <p class="text-slate-400 mt-1">Right at the end of Overtoom by Schinkel. Dedicated family bakfiets specialist (S75 from €5,499) &amp; Melia installer.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Quick Jump Nav & Model Filter Tabs -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -55,10 +101,10 @@
       </div>
       <div class="flex flex-wrap items-center gap-2 text-xs">
         <a href="#test-ride-checklist" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-amber-400 font-semibold transition">
-          📋 Test-Drive &amp; In-Store Checklist
+          📋 Test-Drive &amp; Melia Checklist
         </a>
         <a href="#insurance-comparison" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-emerald-400 font-semibold transition">
-          🛡️ Amsterdam Insurance Guide
+          🛡️ 1053 LH Insurance &amp; Parking Guide
         </a>
       </div>
     </div>
@@ -74,7 +120,7 @@
         <div>
           <div class="flex items-center gap-2.5">
             <span class="text-2xl">📋</span>
-            <h2 class="text-2xl font-extrabold text-white">Test-Drive &amp; In-Store Purchase Checklist</h2>
+            <h2 class="text-2xl font-extrabold text-white">Test-Drive &amp; In-Store Purchase Checklist (Melia + 1053 LH)</h2>
           </div>
           <p class="text-sm text-slate-300 mt-1">Interactive checklist for your showroom visit (progress saves automatically on your phone).</p>
         </div>
@@ -92,7 +138,7 @@
           <div class="space-y-3 text-sm text-slate-200">
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="ride-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>S75 (75Nm) vs S100 (100Nm) Bridge Test:</strong> Stop mid-incline on a bridge or ramp and start from 0 km/h with weight in the box. Feel how much earlier the S100 Cargo Line engages.</span>
+              <span><strong>S75 (75Nm) vs S100 (100Nm) Bridge Test:</strong> Stop mid-incline on a bridge (e.g. Overtoom/Kattensloot bridges) and start from 0 km/h with weight in the box. Feel how much earlier the S100 Cargo Line engages.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="ride-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
@@ -104,32 +150,32 @@
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="ride-4" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Slow-Speed Balance &amp; Turning Circle:</strong> Do a tight U-turn on a narrow cycle path to feel Lovens' cable-steering responsiveness.</span>
+              <span><strong>Oud-West Sidewalk &amp; Rack Maneuvering:</strong> Test a tight U-turn and see how easily the front nose clears narrow Oud-West street parking spots.</span>
             </label>
           </div>
         </div>
 
-        <!-- Category 2 -->
-        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
+        <!-- Category 2: Melia Babyschaal + Toddler -->
+        <div class="bg-slate-950/60 border border-emerald-500/30 rounded-xl p-5">
           <h3 class="font-bold text-emerald-400 text-base mb-3 flex items-center gap-2">
-            <span>👶</span> 2. Kids Setup (Toddler ~2.5y + Baby ~2m)
+            <span>👶</span> 2. Melia Babyschaal + Toddler Bench Setup
           </h3>
           <div class="space-y-3 text-sm text-slate-200">
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="kids-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Maxi-Cosi + Toddler Legroom Check:</strong> Ask the shop to mount the Maxi-Cosi carrier in the box and seat your toddler on the bench simultaneously—verify knee &amp; foot clearance!</span>
+              <span><strong>Huge Space Win — Side-by-Side Bench Fit:</strong> Unlike a bulky Maxi-Cosi frame that eats the whole floor, the <strong>Melia Babyschaal (0–9m)</strong> mounts right on the bench next to your toddler (~2.5y), leaving the entire floor free for feet &amp; groceries! Verify shoulder width for both kids on the bench.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="kids-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Raincover (Regenhuif) Height &amp; Zippers:</strong> Close the raincover over the Maxi-Cosi + toddler bench to check head clearance, side-zipper ease, and handlebar knuckle room in the rain.</span>
+              <span><strong>Specific "Melia Bevestigingsset voor Lovens Explorer":</strong> You MUST use the Lovens-specific Melia mounting strap kit (~€27, no drilling into the EPP foam box). <strong>Crucial:</strong> Check whether you are buying the <strong>3-point</strong> or <strong>5-point</strong> Melia shell (e.g. Melia 4-Seizoenen Comfort / Plus)—the 3-point and 5-point Lovens strap kits are <em>not</em> interchangeable!</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="kids-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Quick-Adjust Saddle &amp; Stem:</strong> Switch riders between Nitay &amp; Adi on the spot—check how fast the seatpost and handlebar height adjust without tools.</span>
+              <span><strong>Raincover (Regenhuif) + Melia Clearance:</strong> Because the Melia sits directly on the bench, you get much better head &amp; zipper clearance under the Lovens raincover than with a Maxi-Cosi—test zipping it shut in-store.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="kids-4" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Kickstand (Bokstandaard) Leverage:</strong> Practice pulling the bike onto and pushing it off the double kickstand while loaded.</span>
+              <span><strong>Quick-Adjust Saddle, Stem &amp; Kickstand:</strong> Switch rider height between Nitay &amp; Adi on the spot, and practice pulling the loaded bike onto its double kickstand (`bokstandaard`).</span>
             </label>
           </div>
         </div>
@@ -137,20 +183,20 @@
         <!-- Category 3 -->
         <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
           <h3 class="font-bold text-blue-400 text-base mb-3 flex items-center gap-2">
-            <span>🔋</span> 3. Specs &amp; Hidden Config Details to Verify
+            <span>🔋</span> 3. Specs &amp; 1053 LH Charging Logistics
           </h3>
           <div class="space-y-3 text-sm text-slate-200">
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="spec-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Which Battery is in the Quoted Price?</strong> Base deals often quote <strong>400Wh</strong>. Ask the exact upgrade price for <strong>545Wh (+~€200)</strong> or <strong>800Wh (+~€450)</strong> so you aren't charging every 2 days in winter.</span>
+              <span><strong>Battery Removal &amp; Upstairs Carry Check:</strong> Since the bike parks outside on Ter Haarstraat and you carry the battery upstairs to charge, practice unlocking and lifting the battery out of the Explorer 2 side-rail with one hand!</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="spec-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Confirm True "Explorer 2" (Not Gen 1 Stock):</strong> Verify the <strong>mono-cast smooth aluminum frame</strong> (no weld seams), integrated ABUS battery lock, and fixed Bosch Kiox 300 / Purion 200 display.</span>
+              <span><strong>545Wh / 800Wh Upgrade Price:</strong> Base deals often quote <strong>400Wh</strong>. Upgrading to <strong>545Wh (+~€200)</strong> or <strong>800Wh (+~€450)</strong> means carrying the battery upstairs to charge only once a week instead of every 2 days.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="spec-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>LED Daytime Strip &amp; Turn Signals:</strong> Check if the front EPP box has the integrated LED daytime running light strip (~€130) and optional Explorer 2 turn indicators.</span>
+              <span><strong>Confirm True "Explorer 2" (Not Gen 1 Stock):</strong> Verify the <strong>mono-cast smooth aluminum frame</strong> (no weld seams), integrated ABUS battery lock (keyed-alike to the ring lock!), and Bosch Kiox 300 / Purion 200 display.</span>
             </label>
           </div>
         </div>
@@ -158,52 +204,56 @@
         <!-- Category 4 -->
         <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
           <h3 class="font-bold text-purple-400 text-base mb-3 flex items-center gap-2">
-            <span>🤝</span> 4. Black Friday Deal &amp; Workshop Terms
+            <span>🤝</span> 4. Black Friday Deal &amp; Price-Match Strategy
           </h3>
           <div class="space-y-3 text-sm text-slate-200">
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="deal-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>"All-In" Ready-to-Ride Quote:</strong> Get a printed/emailed quote including Bike + 545Wh/800Wh Battery + Raincover + Maxi-Cosi Adapter + ART-2/4 Chain + GPS installation + assembly fee.</span>
+              <span><strong>Overtoom Price-Match Leverage:</strong> Ask <strong>Fietsenwinkel.nl (Overtoom 8)</strong> or <strong>DrBeyk (Schinkelstraat)</strong> to match <strong>Bikes Bikes Bikes' €6,099 S100 deal</strong> or throw in the Raincover (~€360) + Melia Babyschaal &amp; Lovens mounting kit (~€125 total) for free!</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="deal-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Free Accessory Mounting:</strong> Ask them to include free installation of the Maxi-Cosi adapter, raincover, and GPS tracker (usually €75–€120 in workshop labor).</span>
+              <span><strong>Free Melia + Raincover + GPS Mounting:</strong> Having the workshop thread and tension the Melia Lovens straps + mount the raincover and GPS tracker before pickup saves ~€90 in labor and ensures the babyschaal is rock-solid from day 1.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" data-check="deal-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
-              <span><strong>Service Turnaround &amp; Loaner Bakfiets:</strong> Ask: <em>"If our bike needs warranty or brake service, how long is the wait for customers who bought here, and do you have a loaner bike?"</em></span>
+              <span><strong>Keyed-Alike Locks (`Gelijksluitend`):</strong> Ask for the ABUS ring lock and battery lock to use the <strong>exact same key</strong> (and ensure both key numbers + all accessories are printed on your invoice for insurance).</span>
             </label>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: Amsterdam Bakfiets Insurance Comparison -->
+    <!-- SECTION 2: Amsterdam 1053 LH Bakfiets Insurance Comparison -->
     <section id="insurance-comparison" class="mt-14 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
       <div class="bg-gradient-to-r from-emerald-500/20 via-teal-500/10 to-transparent border-b border-slate-800 p-6">
         <div class="flex items-center gap-2.5">
           <span class="text-2xl">🛡️</span>
-          <h2 class="text-2xl font-extrabold text-white">Amsterdam Bakfiets Insurance Comparison (2026 Rules)</h2>
+          <h2 class="text-2xl font-extrabold text-white">Amsterdam 1053 LH (Oud-West) Insurance &amp; Street-Parking Rules</h2>
         </div>
         <p class="text-sm text-slate-300 mt-1">
-          Amsterdam (postcode 10xx) is classified as the highest theft-risk zone in NL. For any e-bakfiets over €4,500, rules are strict—and <strong>many insurers only accept policies activated directly in-store by the dealer at purchase</strong>.
+          Postcode <strong>1053 LH (Da Costabuurt / Oud-West)</strong> is in Amsterdam's Tier-1 urban theft zone, and street-parking overnight is the norm. Here is what every insurer requires for <strong>1053 LH</strong> so a claim is never denied:
         </p>
       </div>
 
-      <!-- Critical Amsterdam Golden Rules Alert -->
+      <!-- Critical 1053 LH Golden Rules Alert -->
       <div class="p-6 pb-2">
-        <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs sm:text-sm text-slate-200 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs sm:text-sm text-slate-200 grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
             <strong class="text-amber-400 block mb-1">1. Buy via Dealer at Checkout</strong>
-            Kingpolis, ENRA, and ANWB often block standalone online sign-ups for Amsterdam postcodes—activate through the bike shop so they register the frame + GPS number directly.
+            In postcode <strong>1053</strong>, Kingpolis &amp; ENRA often block standalone online sign-ups—activate in-store so the dealer certifies the frame + GPS number.
           </div>
           <div>
             <strong class="text-amber-400 block mb-1">2. Kiwa GPS + Active Data Plan</strong>
-            A Kiwa-certified GPS tracker (Tracefy / Loqet / Bosch ConnectModule) with an active paid subscription is mandatory above €3,500–€4,500.
+            A Kiwa-certified GPS tracker (Tracefy / Loqet) with an active subscription is mandatory above €3,500–€4,500 in 1053 LH.
           </div>
           <div>
-            <strong class="text-amber-400 block mb-1">3. Two Locks + Fixed Object + 2 Keys</strong>
-            Must always be locked with the ART-2 ring lock <strong>AND</strong> a heavy ART-2/ART-4 chain to a fixed object (rack/pole/wall anchor). Keep both original keys of each lock!
+            <strong class="text-amber-400 block mb-1">3. ART-2 Ring + Heavy Chain to Staple</strong>
+            When parked on Ter Haarstraat/Da Costakade, lock the frame (not just a wheel!) to a metal municipal bike staple (`nietje`) with an ART-2/ART-4 chain.
+          </div>
+          <div>
+            <strong class="text-amber-400 block mb-1">4. Remove Battery Overnight</strong>
+            For overnight street parking in Oud-West, bring the battery &amp; removable display inside—battery theft only pays out if forced lock damage is proven, and cold nights drain range.
           </div>
         </div>
       </div>
@@ -215,8 +265,8 @@
             <tr class="border-b border-slate-800 bg-slate-950/60 text-[11px] font-bold uppercase tracking-wider text-slate-400">
               <th class="py-3.5 px-4">Insurer / Type</th>
               <th class="py-3.5 px-4">Where Offered</th>
-              <th class="py-3.5 px-4">Est. Amsterdam Cost</th>
-              <th class="py-3.5 px-4">Mandatory Lock &amp; GPS Rules</th>
+              <th class="py-3.5 px-4">Est. 1053 LH Rate</th>
+              <th class="py-3.5 px-4">Mandatory Lock &amp; GPS Rules (1053 LH)</th>
               <th class="py-3.5 px-4">Key Perks &amp; Depreciation</th>
             </tr>
           </thead>
@@ -254,7 +304,7 @@
                 <div class="text-xs text-amber-400 mt-0.5">Top Dealer-Integrated Choice</div>
               </td>
               <td class="py-4 px-4 align-top text-xs text-slate-300">
-                <strong>QicQ, DrBeyk, Fietsvoordeelshop, Urban E-Bikes</strong> (in-store activation)
+                <strong>DrBeyk (8 min away), Urban E-Bikes (7 min), QicQ, Fietsvoordeelshop</strong>
               </td>
               <td class="py-4 px-4 align-top text-xs">
                 <span class="font-bold text-white text-sm">~€25 – €35 / mo</span>
@@ -266,7 +316,7 @@
               </td>
               <td class="py-4 px-4 align-top text-xs text-slate-300">
                 • <strong>3 years 100% new-value replacement</strong> handled directly via your dealer<br>
-                • Includes accessories (Raincover, Maxi-Cosi) if on purchase invoice
+                • Includes accessories (Raincover, Melia Babyschaal) if on purchase invoice
               </td>
             </tr>
 
@@ -277,7 +327,7 @@
                 <div class="text-xs text-slate-400 mt-0.5">Dealer-Exclusive in Amsterdam</div>
               </td>
               <td class="py-4 px-4 align-top text-xs text-slate-300">
-                <strong>Fietsenwinkel.nl, Fietsvoordeelshop, QicQ</strong> (must be bought via dealer in Amsterdam)
+                <strong>Fietsenwinkel.nl (4 min away at Overtoom 8), Fietsvoordeelshop, QicQ</strong>
               </td>
               <td class="py-4 px-4 align-top text-xs">
                 <span class="font-bold text-white text-sm">~€26 – €36 / mo</span>
@@ -344,13 +394,14 @@
     </section>
 
     <footer class="mt-12 text-center text-xs text-slate-600 border-t border-slate-900 pt-6">
-      Lovens Bakfiets Deal Watcher &bull; Amsterdam Maintenance Shops Only &bull; Automated Daily Scraping
+      Lovens Bakfiets Deal Watcher &bull; Tailored for 1053 LH (Oud-West) &amp; Melia Babyschaal Setup &bull; Automated Daily Scraping
     </footer>
   </main>
 
   <script>
     let globalData = null;
     let currentFilter = 'ALL';
+    let currentSort = 'PRICE';
 
     function initChecklist() {
       const boxes = document.querySelectorAll('input[type="checkbox"][data-check]');
@@ -386,43 +437,17 @@
       renderModels();
     }
 
-    function buildComparisonFromDealers(dealers) {
-      const grouped = {
-        S100: {
-          title: "Lovens Explorer 2 S100 (100Nm Cargo Line)",
-          subtitle: "Bosch Cargo Line (100Nm) • Enviolo Extreme / Automatiq • Best for bridges, hills & 2 kids",
-          offers: []
-        },
-        S75: {
-          title: "Lovens Explorer 2 S75 (75Nm Performance Line)",
-          subtitle: "Bosch Performance Line (75Nm) • Enviolo Heavy Duty • Smooth city cruising",
-          offers: []
+    function setSort(sortMode) {
+      currentSort = sortMode;
+      ['PRICE', 'DISTANCE'].forEach(mode => {
+        const btn = document.getElementById('sort-' + mode);
+        if (mode === sortMode) {
+          btn.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 transition";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition";
         }
-      };
-      dealers.forEach(d => {
-        d.models.forEach(m => {
-          const cat = m.category || (m.model.includes('100') ? 'S100' : 'S75');
-          grouped[cat].offers.push({
-            shop_name: d.name,
-            location: d.location,
-            neighborhood: d.neighborhood || d.pickup,
-            maintenance: d.maintenance || "Local Amsterdam workshop",
-            test_ride: d.test_ride,
-            url: m.url || d.url,
-            notes: d.notes,
-            model: m.model,
-            motor: m.motor,
-            gears: m.gears,
-            base_price: m.base_price,
-            deal_price: m.deal_price,
-            savings: m.base_price - m.deal_price,
-            status: m.status
-          });
-        });
       });
-      grouped.S100.offers.sort((a, b) => a.deal_price - b.deal_price);
-      grouped.S75.offers.sort((a, b) => a.deal_price - b.deal_price);
-      return grouped;
+      renderModels();
     }
 
     function renderModels() {
@@ -430,29 +455,45 @@
       const container = document.getElementById('modelsContainer');
       container.innerHTML = '';
 
-      const comparison = globalData.models_comparison || buildComparisonFromDealers(globalData.dealers);
+      const comparison = globalData.models_comparison;
       const categories = currentFilter === 'ALL' ? ['S100', 'S75'] : [currentFilter];
 
       categories.forEach(catKey => {
         const group = comparison[catKey];
         if (!group || !group.offers.length) return;
 
-        const lowestPrice = Math.min(...group.offers.map(o => o.deal_price));
+        const offers = [...group.offers];
+        if (currentSort === 'DISTANCE') {
+          offers.sort((a, b) => (a.distance_km || 99) - (b.distance_km || 99) || a.deal_price - b.deal_price);
+        } else {
+          offers.sort((a, b) => a.deal_price - b.deal_price || (a.distance_km || 99) - (b.distance_km || 99));
+        }
+
+        const lowestPrice = Math.min(...offers.map(o => o.deal_price));
+        const closestKm = Math.min(...offers.map(o => o.distance_km || 99));
         const badgeColor = catKey === 'S100' ? 'from-amber-500/20 to-orange-500/10 border-amber-500/30' : 'from-blue-500/20 to-cyan-500/10 border-blue-500/30';
         const icon = catKey === 'S100' ? '⚡' : '🚲';
 
         let rowsHtml = '';
-        group.offers.forEach((offer, idx) => {
+        offers.forEach((offer) => {
           const isLowest = offer.deal_price === lowestPrice;
+          const isClosest = offer.distance_km === closestKm;
           rowsHtml += `
             <tr class="border-b border-slate-800/80 hover:bg-slate-800/40 transition ${isLowest ? 'bg-emerald-950/20' : ''}">
               <td class="py-4 px-4 align-top">
                 <div class="flex items-center gap-2 flex-wrap">
                   <span class="font-bold text-white text-base">${offer.shop_name}</span>
-                  ${isLowest ? '<span class="text-[11px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950">Best Price</span>' : ''}
+                  ${isLowest ? '<span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950">Best Price</span>' : ''}
+                  ${isClosest ? '<span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-slate-950">Closest (4 min)</span>' : ''}
                 </div>
                 <div class="text-xs text-amber-400 font-medium mt-0.5">📍 ${offer.neighborhood}</div>
                 <div class="text-xs text-slate-400 mt-0.5">${offer.location}</div>
+                ${offer.distance_from_home ? `
+                  <div class="mt-1.5 inline-flex items-center gap-2 text-xs">
+                    <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-semibold">🚴 ${offer.distance_from_home} from 1053 LH</span>
+                    <a href="${offer.directions_url}" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-medium">Route &rarr;</a>
+                  </div>
+                ` : ''}
               </td>
               <td class="py-4 px-4 align-top">
                 <div class="font-semibold text-slate-100 text-sm">${offer.model}</div>
@@ -499,7 +540,7 @@
             <table class="w-full text-left border-collapse">
               <thead>
                 <tr class="border-b border-slate-800 bg-slate-950/60 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                  <th class="py-3.5 px-4 w-1/4">Amsterdam Shop &amp; Location</th>
+                  <th class="py-3.5 px-4 w-1/4">Amsterdam Shop &amp; Distance from 1053 LH</th>
                   <th class="py-3.5 px-4 w-1/4">Model &amp; Spec</th>
                   <th class="py-3.5 px-4 w-1/3">Local Maintenance &amp; Perks</th>
                   <th class="py-3.5 px-4 text-right">Price &amp; Savings</th>
