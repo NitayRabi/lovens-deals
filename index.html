@@ -10,6 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    input[type="checkbox"]:checked + span {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen">
@@ -27,7 +31,7 @@
           Compare by Model &bull; 6 Amsterdam Service Hubs
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Lovens Black Friday Deal Radar</h1>
-        <p class="text-slate-400 mt-2 text-base">Side-by-side price &amp; perk comparison by model across Amsterdam shops with local maintenance workshops.</p>
+        <p class="text-slate-400 mt-2 text-base">Side-by-side price comparison by model, interactive test-ride checklist, and Amsterdam insurance guide.</p>
       </div>
       <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 text-right min-w-[210px]">
         <span class="text-xs font-medium text-slate-500 uppercase tracking-wider block">Last Checked</span>
@@ -36,9 +40,9 @@
       </div>
     </header>
 
-    <!-- Model Filter Tabs -->
+    <!-- Quick Jump Nav & Model Filter Tabs -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
-      <div class="inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800">
+      <div class="inline-flex flex-wrap p-1 rounded-xl bg-slate-900 border border-slate-800 gap-1">
         <button onclick="setFilter('ALL')" id="tab-ALL" class="px-4 py-2 rounded-lg text-sm font-bold transition bg-amber-500 text-slate-950">
           All Models (S100 &amp; S75)
         </button>
@@ -49,8 +53,13 @@
           🚲 Explorer 2 S75 (75Nm)
         </button>
       </div>
-      <div class="text-xs text-slate-400">
-        Sorted automatically by <strong class="text-emerald-400">Lowest Deal Price</strong> within each model
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <a href="#test-ride-checklist" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-amber-400 font-semibold transition">
+          📋 Test-Drive &amp; In-Store Checklist
+        </a>
+        <a href="#insurance-comparison" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-emerald-400 font-semibold transition">
+          🛡️ Amsterdam Insurance Guide
+        </a>
       </div>
     </div>
 
@@ -59,28 +68,278 @@
       <!-- Rendered dynamically from deals.json -->
     </div>
 
-    <!-- Essential Add-ons checklist -->
-    <section class="mt-12 bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
-      <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
-        <span>🛡️</span> Family &amp; Black Friday Negotiation Checklist
-      </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-300">
-        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
-          <div class="font-semibold text-white">Regenhuif (Raincover)</div>
-          <div class="text-xs text-slate-400 mt-1">~€360. Often bundled free during Black Friday with LED daytime strip (~€130).</div>
+    <!-- SECTION 1: Interactive Test-Drive & In-Store Purchase Checklist -->
+    <section id="test-ride-checklist" class="mt-14 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+      <div class="bg-gradient-to-r from-amber-500/20 via-orange-500/10 to-transparent border-b border-slate-800 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl">📋</span>
+            <h2 class="text-2xl font-extrabold text-white">Test-Drive &amp; In-Store Purchase Checklist</h2>
+          </div>
+          <p class="text-sm text-slate-300 mt-1">Interactive checklist for your showroom visit (progress saves automatically on your phone).</p>
         </div>
-        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
-          <div class="font-semibold text-white">Baby + Toddler Setup</div>
-          <div class="text-xs text-slate-400 mt-1">Maxi-Cosi adapter for baby + comfort cushion for toddler on the bench.</div>
+        <button onclick="resetChecklist()" class="text-xs font-semibold text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800 px-3 py-2 rounded-lg self-start sm:self-center transition">
+          Reset Checkboxes
+        </button>
+      </div>
+
+      <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Category 1 -->
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
+          <h3 class="font-bold text-amber-400 text-base mb-3 flex items-center gap-2">
+            <span>⚙️</span> 1. Ride Feel: Motor, Gears &amp; Brakes
+          </h3>
+          <div class="space-y-3 text-sm text-slate-200">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="ride-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>S75 (75Nm) vs S100 (100Nm) Bridge Test:</strong> Stop mid-incline on a bridge or ramp and start from 0 km/h with weight in the box. Feel how much earlier the S100 Cargo Line engages.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="ride-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Manual vs. Enviolo Automatiq:</strong> Test whether you prefer twisting the grip at red lights (Manual) or having the bike auto-downshift to a light gear when you stop (Automatiq).</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="ride-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Bosch ABS Braking Test:</strong> Test hard braking on wet brick/cobblestones. Standard 4-piston disc brakes are strong; check if optional Bosch ABS (~€400) feels worth it against front-wheel skid.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="ride-4" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Slow-Speed Balance &amp; Turning Circle:</strong> Do a tight U-turn on a narrow cycle path to feel Lovens' cable-steering responsiveness.</span>
+            </label>
+          </div>
         </div>
-        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
-          <div class="font-semibold text-white">ART 4* Chain + GPS</div>
-          <div class="text-xs text-slate-400 mt-1">Mandatory for Amsterdam bakfiets theft insurance (Qover / Kingpolis / ANWB).</div>
+
+        <!-- Category 2 -->
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
+          <h3 class="font-bold text-emerald-400 text-base mb-3 flex items-center gap-2">
+            <span>👶</span> 2. Kids Setup (Toddler ~2.5y + Baby ~2m)
+          </h3>
+          <div class="space-y-3 text-sm text-slate-200">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="kids-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Maxi-Cosi + Toddler Legroom Check:</strong> Ask the shop to mount the Maxi-Cosi carrier in the box and seat your toddler on the bench simultaneously—verify knee &amp; foot clearance!</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="kids-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Raincover (Regenhuif) Height &amp; Zippers:</strong> Close the raincover over the Maxi-Cosi + toddler bench to check head clearance, side-zipper ease, and handlebar knuckle room in the rain.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="kids-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Quick-Adjust Saddle &amp; Stem:</strong> Switch riders between Nitay &amp; Adi on the spot—check how fast the seatpost and handlebar height adjust without tools.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="kids-4" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Kickstand (Bokstandaard) Leverage:</strong> Practice pulling the bike onto and pushing it off the double kickstand while loaded.</span>
+            </label>
+          </div>
         </div>
-        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
-          <div class="font-semibold text-white">Local Service Proximity</div>
-          <div class="text-xs text-slate-400 mt-1">All 6 listed dealers have in-city Amsterdam workshops for belt, brake &amp; Bosch diagnostics.</div>
+
+        <!-- Category 3 -->
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
+          <h3 class="font-bold text-blue-400 text-base mb-3 flex items-center gap-2">
+            <span>🔋</span> 3. Specs &amp; Hidden Config Details to Verify
+          </h3>
+          <div class="space-y-3 text-sm text-slate-200">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="spec-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Which Battery is in the Quoted Price?</strong> Base deals often quote <strong>400Wh</strong>. Ask the exact upgrade price for <strong>545Wh (+~€200)</strong> or <strong>800Wh (+~€450)</strong> so you aren't charging every 2 days in winter.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="spec-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Confirm True "Explorer 2" (Not Gen 1 Stock):</strong> Verify the <strong>mono-cast smooth aluminum frame</strong> (no weld seams), integrated ABUS battery lock, and fixed Bosch Kiox 300 / Purion 200 display.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="spec-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>LED Daytime Strip &amp; Turn Signals:</strong> Check if the front EPP box has the integrated LED daytime running light strip (~€130) and optional Explorer 2 turn indicators.</span>
+            </label>
+          </div>
         </div>
+
+        <!-- Category 4 -->
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-5">
+          <h3 class="font-bold text-purple-400 text-base mb-3 flex items-center gap-2">
+            <span>🤝</span> 4. Black Friday Deal &amp; Workshop Terms
+          </h3>
+          <div class="space-y-3 text-sm text-slate-200">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="deal-1" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>"All-In" Ready-to-Ride Quote:</strong> Get a printed/emailed quote including Bike + 545Wh/800Wh Battery + Raincover + Maxi-Cosi Adapter + ART-2/4 Chain + GPS installation + assembly fee.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="deal-2" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Free Accessory Mounting:</strong> Ask them to include free installation of the Maxi-Cosi adapter, raincover, and GPS tracker (usually €75–€120 in workshop labor).</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" data-check="deal-3" class="mt-1 w-4 h-4 accent-amber-500 rounded shrink-0">
+              <span><strong>Service Turnaround &amp; Loaner Bakfiets:</strong> Ask: <em>"If our bike needs warranty or brake service, how long is the wait for customers who bought here, and do you have a loaner bike?"</em></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Amsterdam Bakfiets Insurance Comparison -->
+    <section id="insurance-comparison" class="mt-14 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+      <div class="bg-gradient-to-r from-emerald-500/20 via-teal-500/10 to-transparent border-b border-slate-800 p-6">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🛡️</span>
+          <h2 class="text-2xl font-extrabold text-white">Amsterdam Bakfiets Insurance Comparison (2026 Rules)</h2>
+        </div>
+        <p class="text-sm text-slate-300 mt-1">
+          Amsterdam (postcode 10xx) is classified as the highest theft-risk zone in NL. For any e-bakfiets over €4,500, rules are strict—and <strong>many insurers only accept policies activated directly in-store by the dealer at purchase</strong>.
+        </p>
+      </div>
+
+      <!-- Critical Amsterdam Golden Rules Alert -->
+      <div class="p-6 pb-2">
+        <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs sm:text-sm text-slate-200 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <strong class="text-amber-400 block mb-1">1. Buy via Dealer at Checkout</strong>
+            Kingpolis, ENRA, and ANWB often block standalone online sign-ups for Amsterdam postcodes—activate through the bike shop so they register the frame + GPS number directly.
+          </div>
+          <div>
+            <strong class="text-amber-400 block mb-1">2. Kiwa GPS + Active Data Plan</strong>
+            A Kiwa-certified GPS tracker (Tracefy / Loqet / Bosch ConnectModule) with an active paid subscription is mandatory above €3,500–€4,500.
+          </div>
+          <div>
+            <strong class="text-amber-400 block mb-1">3. Two Locks + Fixed Object + 2 Keys</strong>
+            Must always be locked with the ART-2 ring lock <strong>AND</strong> a heavy ART-2/ART-4 chain to a fixed object (rack/pole/wall anchor). Keep both original keys of each lock!
+          </div>
+        </div>
+      </div>
+
+      <!-- Insurance Comparison Table -->
+      <div class="p-6 overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 bg-slate-950/60 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              <th class="py-3.5 px-4">Insurer / Type</th>
+              <th class="py-3.5 px-4">Where Offered</th>
+              <th class="py-3.5 px-4">Est. Amsterdam Cost</th>
+              <th class="py-3.5 px-4">Mandatory Lock &amp; GPS Rules</th>
+              <th class="py-3.5 px-4">Key Perks &amp; Depreciation</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm divide-y divide-slate-800/80">
+            <!-- Qover -->
+            <tr class="hover:bg-slate-800/30 transition bg-emerald-950/10">
+              <td class="py-4 px-4 align-top">
+                <div class="font-bold text-white flex items-center gap-2">
+                  Qover
+                  <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950">15% Promo at BBB</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">Dealer Partner &amp; Online</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                <strong>Bikes Bikes Bikes</strong> (offers <strong>15% off</strong> Qover with Lovens deal) &amp; direct online
+              </td>
+              <td class="py-4 px-4 align-top text-xs">
+                <span class="font-bold text-emerald-400 text-sm">~€22 – €30 / mo</span>
+                <div class="text-slate-400">(with 15% shop discount)</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • ART-2 ring lock + 2nd ART-2/4 chain locked to fixed object<br>
+                • Active GPS tracker required for high-value cargo bikes
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • 36-month no-depreciation (100% new value payout if stolen)<br>
+                • Fast digital claims &amp; 24/7 roadside assistance
+              </td>
+            </tr>
+
+            <!-- Kingpolis -->
+            <tr class="hover:bg-slate-800/30 transition">
+              <td class="py-4 px-4 align-top">
+                <div class="font-bold text-white">Kingpolis (Doorlopend)</div>
+                <div class="text-xs text-amber-400 mt-0.5">Top Dealer-Integrated Choice</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                <strong>QicQ, DrBeyk, Fietsvoordeelshop, Urban E-Bikes</strong> (in-store activation)
+              </td>
+              <td class="py-4 px-4 align-top text-xs">
+                <span class="font-bold text-white text-sm">~€25 – €35 / mo</span>
+                <div class="text-slate-400">(for ~€6,500 insured sum)</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • <strong>Kiwa GPS Tracker</strong> (e.g., Tracefy/Loqet) + active subscription<br>
+                • ART-2 ring lock + <strong>2nd ART-2/ART-4 chain</strong> to fixed object
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • <strong>3 years 100% new-value replacement</strong> handled directly via your dealer<br>
+                • Includes accessories (Raincover, Maxi-Cosi) if on purchase invoice
+              </td>
+            </tr>
+
+            <!-- ENRA -->
+            <tr class="hover:bg-slate-800/30 transition">
+              <td class="py-4 px-4 align-top">
+                <div class="font-bold text-white">ENRA E-Bakfiets</div>
+                <div class="text-xs text-slate-400 mt-0.5">Dealer-Exclusive in Amsterdam</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                <strong>Fietsenwinkel.nl, Fietsvoordeelshop, QicQ</strong> (must be bought via dealer in Amsterdam)
+              </td>
+              <td class="py-4 px-4 align-top text-xs">
+                <span class="font-bold text-white text-sm">~€26 – €36 / mo</span>
+                <div class="text-slate-400">(1, 3, or 5-year policy)</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • <strong>Kiwa GPS Tracker</strong> mandatory above €3,500<br>
+                • ART-2 ring lock + 2nd ART-2 chain anchored to fixed world
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • 3 or 5 years new-for-old coverage at the shop where you bought it<br>
+                • Covers battery, motor &amp; roadside recovery across NL
+              </td>
+            </tr>
+
+            <!-- ANWB -->
+            <tr class="hover:bg-slate-800/30 transition">
+              <td class="py-4 px-4 align-top">
+                <div class="font-bold text-white">ANWB / Unigarant</div>
+                <div class="text-xs text-slate-400 mt-0.5">Independent &amp; Dealer</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                Online (with ANWB member discount) or via partner bike shops
+              </td>
+              <td class="py-4 px-4 align-top text-xs">
+                <span class="font-bold text-white text-sm">~€28 – €38 / mo</span>
+                <div class="text-slate-400">(5% ANWB member discount)</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • <strong>Kiwa GPS Tracker</strong> + active recovery service required &gt;€4,500<br>
+                • 2 ART-2 locks (second lock must be chain/folding locked to object)
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • 3-year new value coverage + strong ANWB Wegenwacht Fiets roadside service<br>
+                • Dedicated recovery team via Tracefy/Loqet
+              </td>
+            </tr>
+
+            <!-- Laka -->
+            <tr class="hover:bg-slate-800/30 transition">
+              <td class="py-4 px-4 align-top">
+                <div class="font-bold text-white">Laka (Collective)</div>
+                <div class="text-xs text-blue-400 mt-0.5">100% Independent / Monthly</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                Direct online (independent of dealer)
+              </td>
+              <td class="py-4 px-4 align-top text-xs">
+                <span class="font-bold text-white text-sm">Variable (~€25 – €42 / mo)</span>
+                <div class="text-slate-400">(capped max monthly rate)</div>
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • ART-2 lock attached to an immovable object<br>
+                • Often doesn't force a specific Kiwa tracker up-front (though GPS lowers risk)
+              </td>
+              <td class="py-4 px-4 align-top text-xs text-slate-300">
+                • <strong>€0 deductible (eigen risico)</strong> &amp; cancel anytime monthly<br>
+                • Cash or replacement settlement without being tied to one dealer
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -92,6 +351,27 @@
   <script>
     let globalData = null;
     let currentFilter = 'ALL';
+
+    function initChecklist() {
+      const boxes = document.querySelectorAll('input[type="checkbox"][data-check]');
+      boxes.forEach(box => {
+        const key = 'lovens_check_' + box.getAttribute('data-check');
+        if (localStorage.getItem(key) === 'true') {
+          box.checked = true;
+        }
+        box.addEventListener('change', () => {
+          localStorage.setItem(key, box.checked ? 'true' : 'false');
+        });
+      });
+    }
+
+    function resetChecklist() {
+      const boxes = document.querySelectorAll('input[type="checkbox"][data-check]');
+      boxes.forEach(box => {
+        box.checked = false;
+        localStorage.removeItem('lovens_check_' + box.getAttribute('data-check'));
+      });
+    }
 
     function setFilter(filter) {
       currentFilter = filter;
@@ -245,6 +525,7 @@
         console.error("Failed to load deals:", err);
       }
     }
+    initChecklist();
     loadDeals();
   </script>
 </body>
