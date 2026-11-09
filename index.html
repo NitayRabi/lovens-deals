@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovens Bakfiets Deal Radar | Amsterdam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <!-- Top Banner -->
+  <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600 text-white font-medium py-2.5 px-4 text-center text-sm shadow-md">
+    <span>🚲 <strong>Black Friday & End-of-Year Watch:</strong> Tracking Lovens Explorer 2 (S100 & S75) across top Amsterdam & NL dealers.</span>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-800 pb-6 mb-8 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-amber-400 mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          Live Deal Monitor &bull; Amsterdam Region
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Lovens Bakfiets Radar</h1>
+        <p class="text-slate-400 mt-2 text-base">Comparing Explorer 2 S100 (100Nm) and S75 (75Nm) deals, stock, and test-ride hubs.</p>
+      </div>
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 text-right min-w-[200px]">
+        <span class="text-xs font-medium text-slate-500 uppercase tracking-wider block">Last Checked</span>
+        <span id="lastUpdated" class="text-sm font-semibold text-emerald-400">Loading...</span>
+        <span class="text-xs text-slate-400 block mt-1">Automatic Daily Check</span>
+      </div>
+    </header>
+
+    <!-- Key Intel Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+      <div class="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl"></div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">⚡</div>
+          <h3 class="font-bold text-white text-base">Target: S100 (100Nm)</h3>
+        </div>
+        <p class="text-sm text-slate-400">Bosch Cargo Line with 100Nm torque + Enviolo Extreme hub. Essential for effortless hills, bridges, and two kids + cargo.</p>
+        <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+          <span class="text-slate-500">MSRP Range:</span>
+          <span class="font-bold text-slate-200">€7,199 – €7,399</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl"></div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-lg">🎁</div>
+          <h3 class="font-bold text-white text-base">Black Friday Formats</h3>
+        </div>
+        <p class="text-sm text-slate-400">Either direct €500–€750 price slash OR factory bundle: <strong>Free Rain Cover</strong> (~€360) + <strong>LED DRL light strip</strong> (~€130).</p>
+        <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+          <span class="text-slate-500">Expected Benefit:</span>
+          <span class="font-bold text-emerald-400">€500 – €750 value</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl"></div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">🏁</div>
+          <h3 class="font-bold text-white text-base">Test Ride Weekend Strategy</h3>
+        </div>
+        <p class="text-sm text-slate-400">Ask the showroom staff directly for their upcoming Black Friday terms. Most dealers will pre-apply it so you don't wait.</p>
+        <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs">
+          <span class="text-slate-500">Focus Dealers:</span>
+          <span class="font-bold text-slate-200">QicQ & Bikes Bikes Bikes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dealers Table / Cards -->
+    <section>
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+          <span>🏪</span> Amsterdam Dealers & Current Offers
+        </h2>
+        <span class="text-xs text-slate-400">Filtered for S75 & S100 availability</span>
+      </div>
+
+      <div id="dealersContainer" class="space-y-4">
+        <!-- Rendered by JS from deals.json -->
+      </div>
+    </section>
+
+    <!-- Essential Add-ons checklist -->
+    <section class="mt-12 bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+      <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+        <span>🛡️</span> Mandatory & Recommended Add-ons
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-300">
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
+          <div class="font-semibold text-white">Regenhuif (Raincover)</div>
+          <div class="text-xs text-slate-400 mt-1">~€360. Absolute essential for Dutch weather with children.</div>
+        </div>
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
+          <div class="font-semibold text-white">Maxi-Cosi / Toddler Seat</div>
+          <div class="text-xs text-slate-400 mt-1">Suspended adapter for baby + second bench for toddler.</div>
+        </div>
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
+          <div class="font-semibold text-white">ART 4* Chain + GPS Tracker</div>
+          <div class="text-xs text-slate-400 mt-1">Required by Dutch insurance (Kingpolis/ANWB) for theft coverage.</div>
+        </div>
+        <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3.5">
+          <div class="font-semibold text-white">DualBattery Ready</div>
+          <div class="text-xs text-slate-400 mt-1">Can expand from standard 545Wh to 725Wh or dual 1090Wh packs.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-12 text-center text-xs text-slate-600 border-t border-slate-900 pt-6">
+      Lovens Bakfiets Deal Watcher &bull; Deployed on Dokploy &bull; Automated Daily Scraping
+    </footer>
+  </main>
+
+  <script>
+    async function loadDeals() {
+      try {
+        const res = await fetch('deals.json?t=' + Date.now());
+        const data = await res.json();
+        
+        document.getElementById('lastUpdated').textContent = data.last_updated;
+        const container = document.getElementById('dealersContainer');
+        container.innerHTML = '';
+
+        data.dealers.forEach(dealer => {
+          const card = document.createElement('div');
+          card.className = "bg-slate-900 border border-slate-800 rounded-2xl p-6 transition hover:border-slate-700 shadow-sm";
+          
+          let modelsHtml = '';
+          dealer.models.forEach(m => {
+            const savings = m.base_price - m.deal_price;
+            modelsHtml += `
+              <div class="bg-slate-950/80 border border-slate-800/90 rounded-xl p-4 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-bold text-white text-base">${m.model}</span>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${m.deal_price < m.base_price ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-800 text-slate-400'}">
+                      ${m.status}
+                    </span>
+                  </div>
+                  <div class="text-xs text-slate-400 mb-2">${m.motor} &bull; ${m.gears}</div>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 flex items-baseline justify-between">
+                  <div>
+                    ${savings > 0 ? `<span class="text-xs text-slate-500 line-through mr-1.5">€${m.base_price.toLocaleString()}</span>` : ''}
+                    <span class="text-lg font-extrabold text-white">€${m.deal_price.toLocaleString()}</span>
+                  </div>
+                  ${savings > 0 ? `<span class="text-xs font-bold text-emerald-400">Save €${savings}</span>` : ''}
+                </div>
+              </div>
+            `;
+          });
+
+          card.innerHTML = `
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between pb-4 border-b border-slate-800 mb-4 gap-2">
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="text-xl font-bold text-white">${dealer.name}</h3>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-amber-400 font-medium">${dealer.pickup}</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">📍 ${dealer.location} &bull; 🚴 Test Ride: <strong class="text-slate-300">${dealer.test_ride}</strong></p>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="${dealer.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-xl transition">
+                  Visit Store &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="text-xs text-slate-300 mb-4 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
+              💡 <strong>Deal Profile:</strong> ${dealer.notes}
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${modelsHtml}
+            </div>
+          `;
+          container.appendChild(card);
+        });
+
+      } catch (err) {
+        console.error("Failed to load deals:", err);
+      }
+    }
+    loadDeals();
+  </script>
+</body>
+</html>
