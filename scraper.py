@@ -20,86 +20,87 @@ def fetch_html(url):
 
 dealers = [
     {
+        "name": "Bikes Bikes Bikes",
+        "location": "Amstelstroomlaan 8, Amsterdam",
+        "neighborhood": "Amsterdam (Amstelkwartier)",
+        "url": "https://www.bikesbikesbikes.nl/pages/lovens-aanbieding",
+        "pickup": "Amsterdam (Amstelkwartier)",
+        "maintenance": "Full local workshop (25% off maintenance labor promo)",
+        "test_ride": "Yes (spacious outdoor test area)",
+        "notes": "€500 direct discount off MSRP on all Lovens Explorer 2 models + 15% off Qover theft insurance & 25% off maintenance labor!",
+        "models": [
+            {"category": "S100", "model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 6599, "deal_price": 6099, "status": "€500 Aanbieding"},
+            {"category": "S75", "model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo HD", "base_price": 6299, "deal_price": 5799, "status": "€500 Aanbieding"}
+        ]
+    },
+    {
+        "name": "Fietsenwinkel.nl Amsterdam",
+        "location": "Overtoom 8, 1054 HH Amsterdam",
+        "neighborhood": "Amsterdam West / Centrum (Overtoom / Vondelpark)",
+        "url": "https://fietsenwinkel.nl/lovens-explorer-2-s100",
+        "pickup": "Amsterdam (Overtoom 8)",
+        "maintenance": "In-store workshop (Voorzien van een werkplaats) + E-Bakfiets Servicepakket (€199/2yr)",
+        "test_ride": "Yes (test rides right into Vondelpark)",
+        "notes": "Black Friday instore deals live! Includes free ready-to-ride assembly (t.w.v. €99) and optional 2-year bakfiets maintenance package.",
+        "models": [
+            {"category": "S100", "model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6599, "deal_price": 6199, "status": "Black Friday Deal", "url": "https://fietsenwinkel.nl/lovens-explorer-2-s100"},
+            {"category": "S75", "model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6599, "deal_price": 5699, "status": "Black Friday Deal", "url": "https://fietsenwinkel.nl/lovens-explorer-2-s75"}
+        ]
+    },
+    {
         "name": "QicQ Amsterdam",
         "location": "KNSM-Laan 11, Amsterdam",
+        "neighborhood": "Amsterdam Oost (KNSM-Eiland)",
         "url": "https://shop.qicq.nl/elektrische-bakfietsen/lovens/",
         "pickup": "Amsterdam (KNSM-Eiland)",
+        "maintenance": "Dedicated Bosch & Lovens service center on KNSM-Eiland",
         "test_ride": "Yes (dedicated quiet quay route)",
-        "notes": "Premium e-bike specialist. Known for Black Friday €500-€700 discount or free accessory bundle (~€490 value).",
+        "notes": "Premium e-bike specialist. Known for Black Friday €500-€700 discount or free accessory bundle (Raincover + LED ~€490 value).",
         "models": [
-            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6499, "status": "In Stock / Test Ride"},
-            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6299, "deal_price": 5699, "status": "In Stock / Test Ride"}
+            {"category": "S100", "model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6499, "status": "In Stock / Test Ride"},
+            {"category": "S75", "model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6299, "deal_price": 5699, "status": "In Stock / Test Ride"}
         ]
     },
     {
         "name": "Fietsvoordeelshop Amsterdam",
         "location": "Parnassusweg 398, Amsterdam",
+        "neighborhood": "Amsterdam Zuid",
         "url": "https://www.fietsvoordeelshop.nl/bakfietsen/elektrische-bakfietsen/lovens",
-        "pickup": "Amsterdam Zuid & Home Delivery",
+        "pickup": "Amsterdam Zuid & Home Service",
+        "maintenance": "In-store Amsterdam Zuid workshop + mobile service van",
         "test_ride": "Yes",
-        "notes": "Large national volume dealer. High likelihood of immediate cash clearance discounts on in-stock Explorer & Explorer 2 models.",
+        "notes": "Large volume dealer in Zuid. Strong cash clearance discounts on in-stock Explorer 2 S75 & S100 Auto models.",
         "models": [
-            {"model": "Explorer 2 S100 Auto", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Automatiq", "base_price": 7399, "deal_price": 6699, "status": "Stock available"},
-            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6199, "deal_price": 5499, "status": "Special Autumn Price"}
-        ]
-    },
-    {
-        "name": "Bikes Bikes Bikes",
-        "location": "Amstelstroomlaan 8, Amsterdam",
-        "url": "https://www.bikesbikesbikes.nl/pages/lovens-aanbieding",
-        "pickup": "Amsterdam (Amstelkwartier)",
-        "test_ride": "Yes (great outdoor test area)",
-        "notes": "€500 direct discount off MSRP on all Lovens Explorer 2 models + 15% off Qover theft insurance & 25% off maintenance labor!",
-        "models": [
-            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 6599, "deal_price": 6099, "status": "€500 Aanbieding"},
-            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo HD", "base_price": 6299, "deal_price": 5799, "status": "€500 Aanbieding"}
-        ]
-    },
-    {
-        "name": "Fietskar.nl (Hilversum)",
-        "location": "Hilversum Showroom & NL Delivery",
-        "url": "https://www.fietskar.nl/categorie/bakfiets/lovens/",
-        "pickup": "Hilversum (~30 min) & Delivery",
-        "test_ride": "Yes (Hilversum showroom)",
-        "notes": "Up to 12% off Explorer 2 S75 & S75 Auto/ABS models! Full custom configurator for batteries (400/545/800Wh) and accessories.",
-        "models": [
-            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6599, "status": "From €6,599 (400Wh+)"},
-            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6299, "deal_price": 5549, "status": "-12% Deal (From €5,549)"}
-        ]
-    },
-    {
-        "name": "viaBOVAG (Bike Totaal Krimpen)",
-        "location": "Parkzoom 27-29, Krimpen a/d IJssel",
-        "url": "https://www.viabovag.nl/fiets/aanbod/lovens-explorer-2-3rm54oj",
-        "pickup": "Krimpen a/d IJssel (BOVAG Certified)",
-        "test_ride": "Yes (Request via BOVAG)",
-        "notes": "Official BLACK FRIDAY listing: €800 discount on brand-new 2025 Lovens Explorer 2 S75 (Avenue Green) with BOVAG 40-point check & warranty.",
-        "models": [
-            {"model": "Explorer 2 S75 (Avenue Green)", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6299, "deal_price": 5499, "status": "BLACK FRIDAY (-€800)"}
+            {"category": "S100", "model": "Explorer 2 S100 Auto", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Automatiq", "base_price": 7399, "deal_price": 6699, "status": "Stock available"},
+            {"category": "S75", "model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6199, "deal_price": 5499, "status": "Special Autumn Price"}
         ]
     },
     {
         "name": "DrBeyk Amsterdam",
         "location": "Eerste Schinkelstraat 16, Amsterdam",
+        "neighborhood": "Amsterdam Zuid / West (Schinkelbuurt)",
         "url": "https://www.drbeykonline.nl/collections/lovens-bakfietsen",
-        "pickup": "Amsterdam West / Westerpark",
+        "pickup": "Amsterdam (Schinkelbuurt)",
+        "maintenance": "Specialist Amsterdam bakfiets repair & maintenance shop",
         "test_ride": "Yes",
-        "notes": "Dedicated Amsterdam bakfiets shop. Great after-sales service and local maintenance in town.",
+        "notes": "Dedicated local Amsterdam bakfiets specialist. Highly rated for ongoing family bike maintenance and fast local repairs.",
         "models": [
-            {"model": "Explorer S100 / S85", "motor": "Bosch Cargo Line", "gears": "Enviolo", "base_price": 6999, "deal_price": 6299, "status": "In Showroom"},
-            {"model": "Explorer S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo", "base_price": 6099, "deal_price": 5499, "status": "In Showroom"}
+            {"category": "S100", "model": "Explorer S100 / S85", "motor": "Bosch Cargo Line", "gears": "Enviolo Heavy Duty", "base_price": 6999, "deal_price": 6299, "status": "In Showroom"},
+            {"category": "S75", "model": "Explorer S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo Heavy Duty", "base_price": 6099, "deal_price": 5499, "status": "In Showroom"}
         ]
     },
     {
         "name": "Urban E-Bikes",
-        "location": "Danie Theronstraat & Overtoom, Amsterdam",
+        "location": "Danie Theronstraat 22 & Overtoom 459, Amsterdam",
+        "neighborhood": "Amsterdam Oost & West",
         "url": "https://www.urbanebikes.nl/48-lovens",
         "pickup": "Amsterdam Oost / West",
+        "maintenance": "Two Amsterdam service workshops (Oost & Overtoom)",
         "test_ride": "Yes",
-        "notes": "Multiple pickup spots in Amsterdam, offers trade-in options and seasonal promotions.",
+        "notes": "Two full-service locations in Amsterdam. Offers trade-in options and seasonal accessory promotions.",
         "models": [
-            {"model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6599, "status": "Order / Pickup"},
-            {"model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo HD", "base_price": 6299, "deal_price": 5699, "status": "Order / Pickup"}
+            {"category": "S100", "model": "Explorer 2 S100", "motor": "Bosch Cargo Line (100Nm)", "gears": "Enviolo Extreme", "base_price": 7199, "deal_price": 6599, "status": "Order / Pickup"},
+            {"category": "S75", "model": "Explorer 2 S75", "motor": "Bosch Performance (75Nm)", "gears": "Enviolo HD", "base_price": 6299, "deal_price": 5699, "status": "Order / Pickup"}
         ]
     }
 ]
@@ -117,22 +118,72 @@ def live_check():
                     d["models"][0]["deal_price"] = deal_p
                     d["models"][0]["base_price"] = base_p
 
-    # Live check viaBOVAG
-    bovag_html = fetch_html("https://www.viabovag.nl/fiets/aanbod/lovens-explorer-2-3rm54oj")
-    if bovag_html:
-        for d in dealers:
-            if "viaBOVAG" in d["name"]:
-                m_price = re.search(r'€\s*([0-9]\.[0-9]{3}),-', bovag_html)
-                if m_price:
-                    d["models"][0]["deal_price"] = int(m_price.group(1).replace(".", ""))
+    # Live check Fietsenwinkel.nl S100 & S75
+    fw_s100 = fetch_html("https://fietsenwinkel.nl/lovens-explorer-2-s100")
+    if fw_s100:
+        m = re.search(r'Adviesprijs:\s*€\s*([0-9.]+),[0-9]{2}\s*€\s*([0-9.]+),[0-9]{2}', fw_s100)
+        if m:
+            for d in dealers:
+                if "Fietsenwinkel.nl" in d["name"]:
+                    d["models"][0]["base_price"] = int(m.group(1).replace(".", ""))
+                    d["models"][0]["deal_price"] = int(m.group(2).replace(".", ""))
+
+    fw_s75 = fetch_html("https://fietsenwinkel.nl/lovens-explorer-2-s75")
+    if fw_s75:
+        m = re.search(r'Adviesprijs:\s*€\s*([0-9.]+),[0-9]{2}\s*€\s*([0-9.]+),[0-9]{2}', fw_s75)
+        if m:
+            for d in dealers:
+                if "Fietsenwinkel.nl" in d["name"]:
+                    d["models"][1]["base_price"] = int(m.group(1).replace(".", ""))
+                    d["models"][1]["deal_price"] = int(m.group(2).replace(".", ""))
 
 live_check()
 
+# Build model-grouped structure for side-by-side comparison by model
+models_by_category = {
+    "S100": {
+        "title": "Lovens Explorer 2 S100 (100Nm Cargo Line)",
+        "subtitle": "Bosch Cargo Line (100Nm) • Enviolo Extreme / Automatiq • Best for bridges, hills & 2+ kids",
+        "offers": []
+    },
+    "S75": {
+        "title": "Lovens Explorer 2 S75 (75Nm Performance Line)",
+        "subtitle": "Bosch Performance Line (75Nm) • Enviolo Heavy Duty • Smooth city cruising",
+        "offers": []
+    }
+}
+
+for d in dealers:
+    for m in d["models"]:
+        cat = m.get("category", "S100" if "100" in m["model"] else "S75")
+        offer = {
+            "shop_name": d["name"],
+            "location": d["location"],
+            "neighborhood": d.get("neighborhood", d["pickup"]),
+            "maintenance": d.get("maintenance", "Local Amsterdam workshop"),
+            "test_ride": d["test_ride"],
+            "url": m.get("url", d["url"]),
+            "notes": d["notes"],
+            "model": m["model"],
+            "motor": m["motor"],
+            "gears": m["gears"],
+            "base_price": m["base_price"],
+            "deal_price": m["deal_price"],
+            "savings": m["base_price"] - m["deal_price"],
+            "status": m["status"]
+        }
+        models_by_category[cat]["offers"].append(offer)
+
+# Sort each model category by lowest deal_price first
+for cat in models_by_category:
+    models_by_category[cat]["offers"].sort(key=lambda x: x["deal_price"])
+
 output = {
     "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-    "target_focus": "Lovens Explorer 2 S100 & S75",
+    "target_focus": "Lovens Explorer 2 S100 & S75 (Amsterdam Maintenance Shops Only)",
     "black_friday_window": "Mid-November to Early December (official BF: late Nov)",
     "official_promo": "Free Rain Cover (Regenhuif ~€360) + LED strip (~€130) package often bundled",
+    "models_comparison": models_by_category,
     "dealers": dealers
 }
 
